@@ -1,21 +1,20 @@
 import os 
 contador = 0
 
+
 def cab():
     os.system("cls || clear")
 
-def lista_tarefa(quant_tarefas):
-    os.system("cls || clear")
-    print("\nLista de Tarefas")
-  
-    for i in range(quant_tarefas):
-        materias = input("Digite o nome da matéria?")
-    return materias
 
-def exibir_tarefas(quant_tarefas):
+lista = []
+
+def exibir_tarefas(materias):
+
     print("\nAtividades pendentes")    
-    for i in range(quant_tarefas):
-        print(materias)
+    for materia in materias:
+        print(materia)
+        
+        return materia
 
 
 while True:
@@ -24,24 +23,34 @@ while True:
     print("2- Remover Tarefa")
     print("3- Marcar Tarefa Concluída")
     print("4- Exibir Tarefa")
+    print("0- Sair")
     opcao = int(input("Escolha uma das opções:"))
     
-    alternativa = input("Deseja encerrar(S/N)?")
-    alternativa = alternativa.upper()
-
+   
 
     match(opcao):
         case 1:
             cab()
             quantidades_tar = int(input("Quantas Atividades você possui nessa matéria?"))
+            for i in range(quantidades_tar):
+                materia = input(f"{i+1}º Digite a tarefa pendente:")
+                lista.append(materia)         
+          
+        case 2:
+            pass      
 
-            listagem = lista_tarefa(quantidades_tar)
-        
+        case 3: 
+            pass 
+
         case 4:
-            exibindo = exibir_tarefas(quantidades_tar)
-        case _:
-            print("Opção inválida.")
-    
-    if alternativa == "N":
-        break
+            exibindo = exibir_tarefas(lista )
+            print(exibindo)
+            break
+        case 0: 
+            print("Saindo...")
+            break
 
+        case _:
+            print("Opção inválida, tente novamente")
+    
+   
