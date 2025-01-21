@@ -41,25 +41,29 @@ while True:
 
             input("Aperte Enter para continuar...")
 
+            
         case 3:
             os.system("cls || clear")
-            print("Tarefas Pendentes")
-            for materias in lista:
-                print(materias)
 
-            alterar_tarefa = input("Digite a tarefa que foi concluída:")
+            print("Tarefas pendentes:")
+            for materia in lista:
+                print(f"- {materia}")
 
-            if alterar_tarefa in lista:
+            alterar_tarefa = input("\nQual é a matéria que foi concluída: ")
 
-                tarefa_concluida = input("Digite se há uma tarefa conclída(ex: Concluíad ou Pendente):")
+            if alterar_tarefa in lista:  
+                tarefa_concluida = input("Digite o novo estado (ex: Concluída ou Pendente): ")
+                
+                for i, materia in enumerate(lista):
+                    if materia == alterar_tarefa:
+                        lista[i] = f"{alterar_tarefa} ({tarefa_concluida})"
+                        print(f"Tarefa '{alterar_tarefa}' atualizada para: {tarefa_concluida}")
+            else:
+                print(f"Tarefa '{alterar_tarefa}' não encontrada na lista.")
 
-                for i, alterar_tarefa in enumerate(lista):
-                    if alterar_tarefa == tarefa_concluida:
-                        
-
+            input("\nPressione Enter para continuar...")
 
             
-            input("Aperte Enter para continuar...")
 
         
         case 4:
