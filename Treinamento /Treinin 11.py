@@ -1,12 +1,17 @@
 import os 
 contador = 0
+lista = []
 
 
 def cab():
     os.system("cls || clear")
 
+def lista_tarefas(tarefas):
+    for i in range(quantidades_tar):
+        materia = input(f"{i+1}º Digite a tarefa pendente:")
+        lista.append(materia)         
+        
 
-lista = []
 
 def exibir_tarefas(materias):
 
@@ -32,10 +37,6 @@ while True:
         case 1:
             cab()
             quantidades_tar = int(input("Quantas Atividades você possui nessa matéria?"))
-            for i in range(quantidades_tar):
-                materia = input(f"{i+1}º Digite a tarefa pendente:")
-                lista.append(materia)         
-          
         case 2:
             pass      
 
